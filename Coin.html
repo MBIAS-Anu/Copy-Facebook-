@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Coin Flip</title>
+  </head>
+  <style>
+    	body{
+    font-size:25px;
+    font-weight:bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    font-family:Arial;
+    background-color: #333333;
+    color: #FFFFFF;
+    }
+    .container button{
+      overflow: hidden;
+      background-color:#ADD8E6;
+      margin:10px;
+      padding:8px 20px;
+      outline:none;
+      border:none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  .container button:hover{
+    background-color:#FFF;
+  }
+    </style>
+      <body>
+      <p class="title">COIN FLIP GAME </p>
+      <div class="container">
+        
+       <button onclick="lastResult('Head');">HEAD</button>
+         <button onclick = "
+    lastResult('Tail');
+    ">TAIL</button>
+    <p class ="js-result"></p>
+    <p class ="js-numbers"></p>
+    <p class="js-score"></p>
+      <button onclick = "reset();
+    ">Reset</button>
+    </div>
+  <script>
+    	function reset() {
+ready.win=0;
+    ready.lose=0;
+   localStorage.removeItem('ready');
+   getScore();
+}
+    	let ready = JSON.parse(localStorage.getItem('ready'));  
+    
+if (ready=== null) {
+	ready ={ win:0,   lose:0};
+}
+ getScore();    
+
+   function lastResult (normalHead) {
+    	
+const result = anu ();
+   
+    let guess = '';
+    if (normalHead === 'Head') {
+   if (result === 'Head') { 
+  guess= 'You win!';
+}
+else { 
+ guess='You lose!';
+}
+}
+ 
+  else if ( normalHead === 'Tail'){
+   if (result === 'Tail' ) { 
+ guess='You win!';
+}
+else {
+   guess='You lose!';
+}
+}
+
+if (guess ==='You win!') { 
+ready.win+=1;
+}
+else if (guess === 'You lose!') {
+ready.lose+=1;
+}
+localStorage.setItem('ready', JSON.stringify(ready));
+getScore();
+
+ document.querySelector('.js-result').innerHTML =guess;
+
+ document.querySelector('.js-numbers').innerHTML =(`You ${normalHead} - ${result} Computer`);
+  }
+  function getScore() {document.querySelector('.js-score').innerHTML=`Win:${ready.win} , Lose:${ready.lose}`;
+  }
+    function anu() { 
+const coinFlip = Math.random();
+  let result ='';
+  
+if (coinFlip < 0.5){
+ result= 'Head';
+}
+   else {
+  result= 'Tail'; 
+}
+ return result;
+ }
+  </script>
+  </body>
+</html>
