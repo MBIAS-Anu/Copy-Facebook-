@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <style>
+        body{
+          display: flex;
+          flex-direction:column;
+          height:100vh;
+          font-family: Helvetica Neue;
+        }
+        .number{
+          margin-bottom:6px ;
+        }
+        .passcode{
+          margin-top:7px;
+          margin-bottom: 3px;
+        }
+        .container input{
+          width:97.5%;
+          padding:5.8px;
+          border:1px solid #ADD8E6;
+          color:#1d1d1d;
+          background-color: #f0f2f5;
+          outline:0;
+        }
+
+        .password{
+          width: 100%;
+          padding:1px;
+          position: relative;
+          display: inline-block;
+          border:1px solid #ADD8E6;
+          background-color: #f0f2f5;
+          
+        }
+        .password input{
+          left: 10px;
+          width: 90%;
+          padding:6px;
+          border:none;
+          outline:none;
+          background-color: #f0f2f5;
+          
+        }
+        .password img {
+          position: absolute;
+          left: 91.5%;
+          top: 5.5px;
+          width: 28px;
+          
+        }
+        .myButton{
+          width:101%;
+          background-color:#1877F2;
+          color:#FFFFFF;
+          border:none;
+          font-weight: bold;
+          margin-top:6px;
+          padding:10px;
+          
+        }
+        .forgotpassword{
+          margin-top: 10px;
+          text-decoration: none;
+          color:#1877F2;
+        }
+
+        .orthis{
+          display:flex;
+          width: 100%;
+          margin-top: 22px;
+          margin-bottom: 12px;
+          
+        }        
+        .orthis hr{
+          flex: 1;
+          border: none;
+          border-top: 1px solid #808080;
+        }
+      .orthis span {
+            padding: 0 10px;
+        }
+        .newaccount{
+          padding:8px 5px;
+          margin: 0 105px;
+          background-color: #3CB371;
+          font-weight: bold;
+          color:#FFFFFF;
+          border:none;
+        }
+        .onlyyou{
+          text-decoration: none;
+          color:#000;
+          margin-top: 22px;
+          margin-bottom: 24px;
+          cursor: none;
+        }
+        .languages{
+          margin-bottom: 24px;
+          display: flex;
+          flex-direction: column;
+          
+        }
+        .languages a{
+          text-decoration: none;
+          color:#1877F2;
+          cursor: none;
+        }
+      </style>
+    </head>
+    <body>
+          <div class ="container">
+   <div class="number"> Mobile number or email address</div>
+    <input type="email" >
+    <div class="passcode">Password</div>
+    </div>
+    <div class="password">
+   <input type="password" class="myPassword">
+    <img src="Html/eyeclose.jpg" class="imgName">
+    </div>
+    <button class="myButton">Log In</button>
+    <a href="" class="forgotpassword">Forgotten Password?
+    </a>
+    </a>
+    <div class="orthis">
+    <hr>
+        <span>or</span>    
+    <hr>
+    </div>
+    <button class="newaccount">Create New Account
+    </button><br>
+    
+    <a href="" class="onlyyou">English (UK)</a>
+    <div class="languages">
+    <a href="">Hausa</a><br>
+    <a href="">Français (France)</a><br>
+    <a href="">العربية</a><br>
+    <a href="">More Languages...</a>
+      </div>
+    </body>
+    <script>
+      let passwordInput=document.querySelector(".myPassword");
+      let toggleImg=document.querySelector(".imgName");
+      
+      toggleImg.addEventListener('click', function(){
+        if (passwordInput.type==="text"){
+          toggleImg.src="Html/eyeclose.jpg";
+          passwordInput.type='password';
+          }
+        else{
+          toggleImg.src="Html/eyeopen.jpg";
+          passwordInput.type='text';
+        }
+      }
+      
+      );
+      
+    </script>
+</html>
